@@ -1,6 +1,7 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../utils/colors';
+import { font } from '../utils/font';
 
 const HomeScreen = () => {
   return (
@@ -35,5 +36,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 36,
+    fontFamily: font.SemiBold,
+    padding: 2
   },
 });
