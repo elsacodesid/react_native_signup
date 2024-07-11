@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
     marginVertical: 30,
   },
   text: {
-    fontSize: 36,
+    fontSize: 40,
     fontFamily: font.SemiBold,
-    padding: 2
+    padding: 20,
+    textAlign: "center"
   },
 });
