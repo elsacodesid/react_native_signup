@@ -9,8 +9,13 @@ import {
 import React from 'react';
 import {colors} from '../utils/colors';
 import {font} from '../utils/font';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation()
+  const handleLogin = () => {
+navigation.navigate("LOGIN")
+  }
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -22,7 +27,7 @@ const HomeScreen = () => {
         <Text style={styles.text}>Lorem, ipsum dolor.</Text>
         <Text style={styles.subText}>Dolor sit amet consectetur.</Text>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={[styles.loginButtonWrapper, {backgroundColor: colors.primary}]}>
+          <TouchableOpacity onPress={handleLogin} style={[styles.loginButtonWrapper, {backgroundColor: colors.primary}]}>
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.loginButtonWrapper}>
