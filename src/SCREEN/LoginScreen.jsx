@@ -1,4 +1,6 @@
 import {
+  Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -14,6 +16,7 @@ import {font} from '../utils/font';
 const LoginScreen = () => {
   const [secureEntry, setSecureEntry] = useState(true);
   return (
+    <ScrollView>
     <View style={styles.container}>
       <TouchableOpacity style={styles.buttonWrapper}>
         <Ionicons
@@ -55,9 +58,19 @@ const LoginScreen = () => {
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
         <Text style={styles.continueText}>Or continue with </Text>
-        <TouchableOpacity></TouchableOpacity>
+        <TouchableOpacity style={styles.googleButtonContainer}>
+          <TouchableOpacity style={styles.googleLogo}>
+            <Image source={require('../assets/google.png')} />
+          </TouchableOpacity>
+          <Text style={styles.googleText}>Google</Text>
+        </TouchableOpacity>
+        <View style={styles.signUpContainer}>
+          <Text style={styles.accountText}>Don't have an account?</Text>
+          <Text style={styles.signUpText}>Sign up</Text>
+        </View>
       </View>
     </View>
+    </ScrollView>
   );
 };
 
@@ -78,7 +91,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textContainer: {
-    // marginRight: 50,
     marginVertical: 20,
   },
   welcomeText: {
@@ -123,10 +135,42 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   continueText: {
-    textAlign: "center",
+    textAlign: 'center',
     marginVertical: 20,
     fontFamily: font.Regular,
     fontSize: 14,
-    color: colors.primary
+    color: colors.primary,
+  },
+  googleButtonContainer: {
+    flexDirection: 'row',
+    borderWidth: 2,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    gap: 10,
+  },
+  googleLogo: {
+    height: 20,
+    width: 19,
+  },
+  googleText: {
+    fontSize: 19,
+    fontFamily: font.SemiBold,
+  },
+  signUpContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: 20,
+    gap: 6
+  },
+  accountText: {
+    color: colors.primary,
+    fontFamily: font.Regular
+  },
+  signUpText: {
+    color: colors.primary,
+    fontFamily: font.Bold
   }
 });
