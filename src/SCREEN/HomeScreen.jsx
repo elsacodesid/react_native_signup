@@ -16,6 +16,9 @@ const HomeScreen = () => {
   const handleLogin = () => {
 navigation.navigate("LOGIN")
   }
+  const handleSignUp = () => {
+navigation.navigate("SIGNUP")
+  }
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -31,7 +34,7 @@ navigation.navigate("LOGIN")
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.loginButtonWrapper}>
-            <Text style={[styles.loginButtonText, {color: colors.primary}]}>Sign-up</Text>
+            <Text onPress={handleSignUp} style={[styles.loginButtonText, {color: colors.primary}]}>Sign-up</Text>
           </TouchableOpacity>
         </View>
       </View>
